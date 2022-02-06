@@ -27,7 +27,7 @@
     "proto/wtools/amid/bufferFromFile",
     "proto/node_modules"
   ],
-  "main": "proto/wtools/amid/bufferFromFile/Main.ss",
+  "main": "proto/wtools/amid/bufferFromFile/Main.js",
   "scripts": {
     "install": "node step/Install.ss",
     "node-pre-gyp-install": "node-pre-gyp install --update-binary --fallback-to-build",
