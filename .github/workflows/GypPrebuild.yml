@@ -15,7 +15,7 @@ jobs :
       fail-fast : false
       matrix :
         os : [ ubuntu-latest, windows-latest, macos-latest ]
-        node-version : [ 10.x, 11.x, 12.9.1, 13.x, 14.x, 15.x, 16.x ]
+        node-version : [ 12.9.1, 14.x, 16.x, 17.x, 18.x ]
     if : "startsWith( github.event.head_commit.message, 'version' ) && startsWith( github.ref, 'refs/tags/v' )"
     runs-on : ${{ matrix.os }}
     steps :
@@ -41,17 +41,27 @@ jobs :
     - name : Update npm if current version is 6
       if : "startsWith( steps.getnpmver.outputs.npmver, '6.' )"
       run : npm install -g npm@latest-6
-    # - run : npm -g i willbe@delta
+    - name : Update node-gyp
+      if: ${{ matrix.os == 'windows-latest' }}
+      run : |
+        npm install --global node-gyp@9.0.0
+        npm prefix -g | % {npm config set node_gyp "$_\node_modules\node-gyp\bin\node-gyp.js"}
     - run : npm run clean
-    # - run : will .npm.install
     - run : npm install
     - run : npm list
       continue-on-error : true
     - run : npm run node-pre-gyp-build
-    - run : npm run node-pre-gyp-package && npm run node-pre-gyp-github-release
+    # - run : npm run node-pre-gyp-package && npm run node-pre-gyp-github-release
     # - name : Release module
-    #   uses : Wandalen/wretry.action@v1.0.11
+    #   uses : Wandalen/wretry.action@v1.0.15
     #   with :
     #     command : npm run node-pre-gyp-package && npm run node-pre-gyp-github-release
     #     attempt_limit : 3
     #     attempt_delay: 1000
+    # - run : npm run node-pre-gyp-package && npm run node-pre-gyp-github-release
+    - name : Release module
+      uses : Wandalen/wretry.action@v1.0.15
+      with :
+        command : npm run node-pre-gyp-package && npm run node-pre-gyp-github-release
+        attempt_limit : 3
+        attempt_delay: 1000

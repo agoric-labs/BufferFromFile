@@ -1,6 +1,6 @@
 {
   "name": "bufferfromfile",
-  "version": "0.4.360",
+  "version": "0.4.377",
   "engine": "node >= 6.0.0",
   "enabled": true,
   "license": "MIT",
@@ -54,15 +54,15 @@
   },
   "dependencies": {
     "wbasenodejscpp": "",
-    "node-gyp": "8.1.0",
-    "@mapbox/node-pre-gyp": "1.0.5"
+    "node-gyp": "9.0.0",
+    "@mapbox/node-pre-gyp": "1.0.9"
   },
   "devDependencies": {
     "wTools": "",
     "wTesting": "",
     "wprocess": "",
-    "eslint": "7.32.0",
-    "@mathquis/node-pre-gyp-github": "1.0.1"
+    "node-pre-gyp-github": "1.4.4",
+    "eslint": "7.32.0"
   },
   "gypfile": false,
   "keywords": [
