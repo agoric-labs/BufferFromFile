@@ -54,7 +54,7 @@
   },
   "dependencies": {
     "wbasenodejscpp": "alpha",
-    "node-gyp": "8.1.0",
+    "node-gyp": "9.3.1",
     "@mapbox/node-pre-gyp": "1.0.5"
   },
   "devDependencies": {
