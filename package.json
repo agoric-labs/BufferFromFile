@@ -53,16 +53,16 @@
     "url": "https://github.com/Wandalen/BufferFromFile/issues"
   },
   "dependencies": {
-    "wbasenodejscpp": "latest",
-    "node-gyp": "^9.3.1",
-    "@mapbox/node-pre-gyp": "1.0.9"
+    "@mapbox/node-pre-gyp": "^1.0.11",
+    "node-gyp": "^10.0.1",
+    "wbasenodejscpp": "latest"
   },
   "devDependencies": {
-    "wTools": "latest",
-    "wTesting": "latest",
-    "wprocess": "latest",
+    "eslint": "7.32.0",
     "node-pre-gyp-github": "1.4.4",
-    "eslint": "7.32.0"
+    "wprocess": "latest",
+    "wTesting": "latest",
+    "wTools": "latest"
   },
   "gypfile": false,
   "keywords": [
