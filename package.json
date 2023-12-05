@@ -64,6 +64,9 @@
     "wTesting": "latest",
     "wTools": "latest"
   },
+  "overrides": {
+    "nan": "^2.18.0"
+  },
   "gypfile": false,
   "keywords": [
     "wTools",
